@@ -28,7 +28,7 @@ const MyBlog = () => {
             <h1>All Blogs</h1>
             {data.edges.map(({node}) => {
                 return (
-                    <Link to={`/blog/${node.fields.slug}`}>
+                    <Link to={`/blog/${node.fields.slug}`} key={node.fields.slug}>
                         <h2>{node.frontmatter.title}</h2>
                         <p>{node.frontmatter.date}</p>
                     </Link>
