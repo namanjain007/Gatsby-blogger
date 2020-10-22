@@ -1,7 +1,7 @@
 //to create new pages from out local file markdown data
 const path = require('path');
 
-module.exports.onCreateNode = ({ node, actions }) => {//called whenever a new node is created
+module.exports.onCreateNode = ({ node, actions }) => {//called whenever a new node is created and node is a page for now
     const { createNodeField } = actions;
 
     if(node.internal.type == "MarkdownRemark"){
