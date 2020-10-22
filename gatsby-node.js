@@ -14,3 +14,33 @@ module.exports.onCreateNode = ({ node, actions }) => {//called whenever a new no
         });
     }
 }
+
+module.exports.createPages = async ({ graphql, actions }) => {
+    // **Note:** The graphql function call returns a Promise
+    const result = await graphql(`
+      query {
+        allMarkdownRemark {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `)
+    //console.log(JSON.stringify(result, null, 4))
+    const { createPage } = actions;
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+          path: `/blog/${node.fields.slug}`,
+          component: path.resolve(`./src/templates/blog-post.js`),
+          context: {
+            // Data passed to context is available
+            // in page queries as GraphQL variables.
+            slug: node.fields.slug,
+          },
+        })
+      })
+  }
