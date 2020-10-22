@@ -12,7 +12,9 @@ const blogQuery = graphql`
                         title
                         date
                     }
-                    html
+                    fields{
+                        slug
+                    }
                 }
             }
         }
@@ -21,23 +23,19 @@ const blogQuery = graphql`
 
 const MyBlog = () => {
     const data = useStaticQuery(blogQuery).allMarkdownRemark;
-    console.log(data);
     return (
-        <div>
-            <Layout>
-                <div>
-                    {data.edges.map(edge => {
-                        return (
-                            <div>
-                                <h1>{edge.node.frontmatter.title}</h1>
-                                <p>{edge.node.frontmatter.date}</p>
-                            </div>
-                        )
-                    })}
-                    <Link to="/contactme">Contact-me</Link>
-                </div>
-            </Layout>
-        </div>
+        <Layout>
+            <h1>All Blogs</h1>
+            {data.edges.map(({node}) => {
+                return (
+                    <Link to={`/blog/${node.fields.slug}`}>
+                        <h2>{node.frontmatter.title}</h2>
+                        <p>{node.frontmatter.date}</p>
+                    </Link>
+                )
+            })}
+            <Link to="/contactme">Contact-me</Link>
+        </Layout>
     );
 };
 
