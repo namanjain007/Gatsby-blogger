@@ -29,7 +29,7 @@ const Blog = (props) => {
     const propdata = props.data.markdownRemark;
     return (
         <Layout>
-            <h1>{propdata.frontmatter.title}</h1>
+            <h2>{propdata.frontmatter.title}</h2>
             <p>{propdata.frontmatter.date}</p>
             <div dangerouslySetInnerHTML={ { __html : propdata.html} }></div>
         </Layout>
