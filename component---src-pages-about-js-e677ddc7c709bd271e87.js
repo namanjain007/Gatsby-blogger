@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{"3XHS":function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),r=n.n(a),l=n("Bl7J");t.default=function(){return r.a.createElement("div",null,r.a.createElement(l.a,null,"My Name is Naman Jain (NSIT 21 COE)",r.a.createElement("br",null),r.a.createElement("a",{href:"https://www.twitter.com/",target:"_blank",rel:"noopener noreferrer"},"twitter.com"),r.a.createElement("br",null),r.a.createElement("br",null)))}}}]);
+//# sourceMappingURL=component---src-pages-about-js-e677ddc7c709bd271e87.js.map

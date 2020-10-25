@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{Xd01:function(e,t,n){"use strict";n.r(t);var r=n("q1tI"),l=n.n(r),a=n("Bl7J");t.default=function(){return l.a.createElement("div",null,l.a.createElement(a.a,null,l.a.createElement("h2",null,"My Phone number is 123456789"),l.a.createElement("br",null),l.a.createElement("a",{href:"https://www.twitter.com/",target:"_blank",rel:"noopener noreferrer"},"twitter.com"),l.a.createElement("br",null),l.a.createElement("br",null)))}}}]);
+//# sourceMappingURL=component---src-pages-contactme-js-82e7f708aba612cdb4ec.js.map
